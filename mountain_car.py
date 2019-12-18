@@ -66,6 +66,7 @@ else:
 EPISODES = 1 + 2000
 SHOW_EVERY = 500
 SAVE_EVERY = 20
+RENDER = True
 
 #LEARNING variables
 LEARNING_RATE = 0.1
@@ -105,8 +106,8 @@ for episode in range(EPISODES):
             
         #Graphics render
         if episode % SHOW_EVERY == 0:
-            #env.render()
-            pass
+            if RENDER == True:
+                env.render()
         
         #What action to take
         if np.random.random() > EPSILON:
